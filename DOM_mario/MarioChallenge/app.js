@@ -12,14 +12,16 @@ function isTouching(a, b) {
 
 const init = () => {
     //get the avatar
-    // const avatar = document.querySelector(".avatar")
+    const avatar = document.querySelector(".avatar")
     //get the coin
+    const coin = document.querySelector(".coin")
 
     moveCoin();
     window.addEventListener('keyup', function(e){
         if(e.key === 'ArrowDown' || e.key === 'Down'){
             moveVertical(avatar, 50);
         }
+        if(e.key === 'Arrow')
 
         if(isTouching(avatar,coin)) moveCoin();
     });
@@ -37,9 +39,10 @@ const extractPos = (position) => {
 
 const moveCoin = () => {
     const x = Math.floor(Math.random() * window.innerWidth)
-    // const y = ?
+    const y = Math.floor(Math.random() * window.innerHeight)
     coin.style.top = `${x}px`;
     // coin.style.?? = ??
+    coin.style.left=`${y}px`;
 }
 
 init();
